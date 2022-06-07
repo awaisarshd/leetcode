@@ -28,10 +28,11 @@ var makeZigZag = function (s, numRows) {
             if (i === 0) direction = 0; // set direction down
             else if (i === numRows - 1) direction = 1; // set direction up
 
+            // calculate the next step-size making a square.
             if (direction === 1) stepSize = 2 * i; // (i + i)
             else stepSize = 2 * (numRows - i - 1); // (m-i-1) + (m-i-1)
 
-            index += stepSize;
+            index += stepSize; // update next possible index
 
             if (index < len) {
                 output += s[index];
